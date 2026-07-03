@@ -5,6 +5,9 @@ actionlint = "1.7.12"
 zizmor = "1.26.1"
 gitleaks = "8.30.1"
 lefthook = "2.1.9"
+terraform = "1.15.7"
+tflint = "0.63.1"
+aws-cli = "2.35.11"
 
 [tasks.setup]
 description = "環境基盤を最新化"
@@ -14,3 +17,6 @@ run = ["mise install", "lefthook install", "pnpm install --frozen-lockfile"]
 description = "YAML を検証"
 raw_args = true
 run = "uvx --python-preference only-managed yamllint==1.38.0"
+
+[task_config]
+includes = ["mise-tasks/tf.toml"]

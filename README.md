@@ -1,4 +1,4 @@
-# template
+# terraform-bootstrap
 
 ## Setup
 
