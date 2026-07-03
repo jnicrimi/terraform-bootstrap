@@ -25,6 +25,9 @@ pre-commit:
     taplo:
       glob: "*.toml"
       run: pnpm exec taplo fmt --check {staged_files}
+    terraform-fmt:
+      glob: "terraform/**.{tf,tfvars}"
+      run: mise run tf:fmt
 
 pre-push:
   commands:

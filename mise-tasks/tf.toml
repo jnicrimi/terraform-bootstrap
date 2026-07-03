@@ -1,0 +1,35 @@
+["tf:init"]
+description = "backend を初期化"
+dir = "{{config_root}}"
+usage = 'arg "<env>" help="Environment name"'
+run = 'terraform -chdir=terraform init -backend-config=envs/${usage_env?}.backend.tfvars'
+
+["tf:plan"]
+description = "変更差分を確認"
+dir = "{{config_root}}"
+usage = 'arg "<env>" help="Environment name"'
+run = 'terraform -chdir=terraform plan -var-file=envs/${usage_env?}.tfvars'
+
+["tf:apply"]
+description = "変更を適用"
+dir = "{{config_root}}"
+usage = 'arg "<env>" help="Environment name"'
+run = 'terraform -chdir=terraform apply -var-file=envs/${usage_env?}.tfvars'
+
+["tf:fmt"]
+description = "フォーマットを検査"
+dir = "{{config_root}}/terraform"
+run = "terraform fmt -check -recursive"
+
+["tf:validate"]
+description = "構成を検証"
+dir = "{{config_root}}/terraform"
+run = [
+  "terraform init -backend=false -input=false -lockfile=readonly",
+  "terraform validate",
+]
+
+["tf:lint"]
+description = "tflint で静的解析"
+dir = "{{config_root}}/terraform"
+run = ["tflint --init", "tflint"]
