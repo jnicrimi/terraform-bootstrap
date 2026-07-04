@@ -24,9 +24,9 @@ jobs:
         env:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         with:
-          await github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.addAssignees({
+            await github.rest.issues.addAssignees({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
