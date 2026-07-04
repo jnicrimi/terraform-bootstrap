@@ -42,6 +42,13 @@
         "plugin\\s+\"aws\"\\s*\\{[\\s\\S]*?version\\s*=\\s*\"(?<currentValue>[^\"]+)\"[\\s\\S]*?source\\s*=\\s*\"github\\.com/(?<depName>[^\"]+)\""
       ],
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^mise\\.toml$/"],
+      "matchStrings": ["yamllint==(?<currentValue>[\\d.]+)"],
+      "depNameTemplate": "yamllint",
+      "datasourceTemplate": "pypi"
     }
   ]
 }
