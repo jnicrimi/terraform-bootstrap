@@ -7,7 +7,7 @@ gitleaks = "8.30.1"
 lefthook = "2.1.9"
 terraform = "1.15.7"
 tflint = "0.63.1"
-aws-cli = "2.35.16"
+aws-cli = "2.35.17"
 
 [tasks.setup]
 description = "環境基盤を最新化"
