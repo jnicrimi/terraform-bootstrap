@@ -28,6 +28,11 @@
       "matchPackageNames": ["hashicorp/terraform"],
       "groupName": "terraform",
       "groupSlug": "terraform"
+    },
+    {
+      "matchDepNames": ["@biomejs/biome"],
+      "groupName": "biome",
+      "groupSlug": "biome"
     }
   ],
   "vulnerabilityAlerts": {
