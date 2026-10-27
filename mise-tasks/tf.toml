@@ -2,19 +2,19 @@
 description = "backend を初期化"
 dir = "{{config_root}}"
 usage = 'arg "<env>" help="Environment name"'
-run = 'terraform -chdir=terraform init -backend-config=envs/${usage_env?}.backend.tfvars'
+run = "terraform -chdir=terraform init -backend-config=envs/${usage_env?}.backend.tfvars"
 
 ["tf:plan"]
 description = "変更差分を確認"
 dir = "{{config_root}}"
 usage = 'arg "<env>" help="Environment name"'
-run = 'terraform -chdir=terraform plan -var-file=envs/${usage_env?}.tfvars'
+run = "terraform -chdir=terraform plan -var-file=envs/${usage_env?}.tfvars"
 
 ["tf:apply"]
 description = "変更を適用"
 dir = "{{config_root}}"
 usage = 'arg "<env>" help="Environment name"'
-run = 'terraform -chdir=terraform apply -var-file=envs/${usage_env?}.tfvars'
+run = "terraform -chdir=terraform apply -var-file=envs/${usage_env?}.tfvars"
 
 ["tf:fmt"]
 description = "フォーマットを検査"
