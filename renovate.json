@@ -43,14 +43,6 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)\\.tflint\\.hcl$/"],
-      "matchStrings": [
-        "plugin\\s+\"aws\"\\s*\\{[\\s\\S]*?version\\s*=\\s*\"(?<currentValue>[^\"]+)\"[\\s\\S]*?source\\s*=\\s*\"github\\.com/(?<depName>[^\"]+)\""
-      ],
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
       "managerFilePatterns": ["/^mise\\.toml$/"],
       "matchStrings": ["yamllint==(?<currentValue>[\\d.]+)"],
       "depNameTemplate": "yamllint",
